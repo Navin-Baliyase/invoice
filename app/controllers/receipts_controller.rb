@@ -10,6 +10,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts/1
   # GET /receipts/1.json
   def show
+    @data = File.read(@receipt.upload_path)
   end
 
   # GET /receipts/new
@@ -25,10 +26,9 @@ class ReceiptsController < ApplicationController
   # POST /receipts.json
   def create
     @receipt = Receipt.new(receipt_params)
-
     respond_to do |format|
       if @receipt.save
-        format.html { redirect_to @receipt, notice: 'Receipt was successfully created.' }
+        format.html { redirect_to @receipt, notice: 'Invoice was successfully uploaded.' }
         format.json { render :show, status: :created, location: @receipt }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ReceiptsController < ApplicationController
   def update
     respond_to do |format|
       if @receipt.update(receipt_params)
-        format.html { redirect_to @receipt, notice: 'Receipt was successfully updated.' }
+        format.html { redirect_to @receipt, notice: 'Invoice was successfully updated.' }
         format.json { render :show, status: :ok, location: @receipt }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ReceiptsController < ApplicationController
   def destroy
     @receipt.destroy
     respond_to do |format|
-      format.html { redirect_to receipts_url, notice: 'Receipt was successfully destroyed.' }
+      format.html { redirect_to receipts_url, notice: 'Invoice was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,10 @@
-<h1>New Receipt</h1>
 
-<%= render 'form', receipt: @receipt %>
-
-<%= link_to 'Back', receipts_path %>
+<h1 class="text-dark py-5 text-center">ASCII art</h1>
+<p class="text-dark py-5 text-center"><strong>Welocome to Navin's Invoice! You can upload your ASCII art receipt here and generate invoice number with it.</strong> <i class="fa fa-envelope-open" style="font-size:36px;"></i> </p>
+<p class="text-success py-5 text-center"><strong>Upload an Invoice.</strong> <i class="fa fa-list" style="font-size:24px;color:green"></i></p>
+<i class="glyphicon glyphicon-list"></i>
+<hr>
+<div class="text-center">
+	<%= render 'form', receipt: @receipt %>
+</div>
+<hr>

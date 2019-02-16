@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Your file is succesfully uploaded : </strong>
-  <%= @receipt.upload.blob.filename %>
+	<strong>Your file is succesfully uploaded : </strong>
+	<%= link_to( @receipt.upload.filename , @receipt.upload) %>
 </p>
-
-<p>
-  <strong>Your file is succesfully uploaded : </strong>
-  <%= @receipt.upload.attachment.inspect %>
-</p>
-
+<p class="text-success"> Whole file is parsed to <strong>@data</strong> variable and is splitted to <strong>line</strong> to read each line</p>
+<p class="text-danger"> I don't know to detect ASCII value and i don't want to copy the solution from google so i'm leaving my solution till here.</p>
+<% @data.each_line do |line|%>
+<%=line%><br>
+<%end%>
 <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
 <%= link_to 'Back', receipts_path %>

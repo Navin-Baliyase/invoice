@@ -1,22 +1,21 @@
-<%= form_with(model: receipt, local: true) do |form| %>
-  <% if receipt.errors.any? %>
+<div class="container">
+  <div class="form">
+    <%= form_with(model: receipt, local: true) do |form| %>
+    <% if receipt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
-
       <ul>
-      <% receipt.errors.full_messages.each do |message| %>
+        <% receipt.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :upload %>
-    <%= form.file_field :upload %>
+    <% end %>
+    <div class="group">
+      <%= form.label :upload %>
+      <%= form.file_field :upload %>
+      <%= form.submit %>
+    </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
