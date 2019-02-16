@@ -1,17 +1,4 @@
-# invoice
-Parse ASCII art input text file by uploading it to system.
-
-#concept used
-Active Storage - to upload files
-
-#Compiling ruby file
-ruby game.rb
-location : lib/game.rb
-
-#Active Record
-location : public/active_record.txt
-
-## HOW does an Active Record work?
+HOW does an Active Record work?
 
 Active Record (The Model) in MVC (Model-View-Controller) is responsible for representing buisness data and logic.
 
