@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Your file is succesfully uploaded : </strong>
+  <%= @receipt.upload.blob.filename %>
+</p>
+
+<p>
+  <strong>Your file is succesfully uploaded : </strong>
+  <%= @receipt.upload.attachment.inspect %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>
